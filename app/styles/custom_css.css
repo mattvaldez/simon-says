@@ -1,0 +1,62 @@
+.board {
+	width: 400px;
+	height: 400px;
+	background: radial-gradient(circle, black, rgb(4, 4, 4), rgb(58, 58, 58), black, rgb(39, 39, 39));
+	-moz-border-radius: 360px;
+	-webkit-border-radius: 360px;
+	border-radius: 360px;
+    position: absolute;
+    box-shadow: 10px 10px 5px #888888;
+
+	
+}
+.button-green {
+    margin-top: 35px;
+    margin-left: 50px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgb(153, 255, 153), rgb(0, 153, 51));
+    border-top-left-radius: 360px; 
+    position: absolute;
+}
+.button-red {
+    margin-left: 50px;
+    margin-top: 209px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgb(255, 80, 80), rgb(255, 0, 0));
+    border-bottom-left-radius: 360px;
+    position: absolute;
+}
+.button-yellow {
+    margin-top: 35px;
+    margin-left: 220px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgb(255, 255, 153), rgb(255, 255, 102), rgb(255, 255, 0));
+    border-top-right-radius: 360px;
+    position: absolute;
+}
+.button-blue {
+    margin-top: 209px;
+    margin-left: 220px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgb(0,191,265), rgb(0,0,139) );
+    border-bottom-right-radius: 360px;
+    position: absolute;
+}
+
+/*active button backgrounds*/
+.green-light {
+    background: radial-gradient(circle, white, white, rgb(204, 255, 204), rgb(153, 255, 153), rgb(51, 204, 51), rgb(0, 153, 51));
+}
+.red-light {
+    background: radial-gradient(circle, white, white,    rgb(255, 204, 204), rgb(255, 153, 153), rgb(255, 80, 80), rgb(255, 0, 0));
+}
+.yellow-light {
+    background: radial-gradient(circle, white, white, white, white, rgb(255, 255, 204), rgb(255, 255, 153), rgb(255, 255, 102), rgb(255, 255, 0));
+}
+.blue-light {
+    background: radial-gradient(circle, white, rgb(173,216,200), rgb(135,206,250), rgb(0,191,265), rgb(0,0,139) );
+}
