@@ -10,7 +10,7 @@
 
 	
 }
-.start{
+.button-start{
     margin-top: 145px;
     margin-left: 160px;
     width: 110px;
@@ -20,6 +20,7 @@
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
+    z-index: 1;
 }
 h4{
     padding-top: 38px;

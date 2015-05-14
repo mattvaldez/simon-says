@@ -55,8 +55,8 @@ $(function(){
    });      return player; 
 //----------------------------------------------------------start the game
  function startGame(){
-   $('div.start').click(function(){
-        computerChoose();
+   $('div.button-start').click(function(){
+        
         console.log(pattern);
    }); 
 
