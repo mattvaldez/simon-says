@@ -7,10 +7,10 @@
 	border-radius: 360px;
     position: absolute;
     box-shadow: 10px 10px 5px #888888;
-
+ 
 	
 }
-.button-start{
+button{
     margin-top: 145px;
     margin-left: 160px;
     width: 110px;
@@ -20,12 +20,13 @@
     -webkit-border-radius: 50px;
     border-radius: 50px;
     position: absolute;
-    z-index: 1;
+    
 }
 h4{
-    padding-top: 38px;
-    padding-left: 18px;
+    bottom: 30%;
+    left: 18%;
     color: white;
+    position: absolute;
 }
 
 .button-green {
@@ -36,6 +37,7 @@ h4{
     background: radial-gradient(circle, rgb(153, 255, 153), rgb(0, 153, 51));
     border-top-left-radius: 360px; 
     position: absolute;
+
 }
 .button-red {
     margin-left: 50px;
@@ -45,6 +47,7 @@ h4{
     background: radial-gradient(circle, rgb(255, 80, 80), rgb(255, 0, 0));
     border-bottom-left-radius: 360px;
     position: absolute;
+
 }
 .button-yellow {
     margin-top: 35px;
@@ -54,15 +57,17 @@ h4{
     background: radial-gradient(circle, rgb(255, 255, 153), rgb(255, 255, 102), rgb(255, 255, 0));
     border-top-right-radius: 360px;
     position: absolute;
+
 }
 .button-blue {
     margin-top: 209px;
     margin-left: 220px;
     width: 160px;
     height: 160px;
-    background: radial-gradient(circle, rgb(0,191,265), rgb(0,0,139) );
+    background: radial-gradient(circle, rgb(0,191,255), rgb(0,0,139) );
     border-bottom-right-radius: 360px;
     position: absolute;
+   
 }
 
 /*active button backgrounds*/
@@ -76,5 +81,5 @@ h4{
     background: radial-gradient(circle, white, white, white, white, rgb(255, 255, 204), rgb(255, 255, 153), rgb(255, 255, 102), rgb(255, 255, 0));
 }
 .blue-light {
-    background: radial-gradient(circle, white, rgb(173,216,200), rgb(135,206,250), rgb(0,191,265), rgb(0,0,139) );
+    background: radial-gradient(circle, white, rgb(173,216,200), rgb(135,206,250), rgb(0,191,255), rgb(0,0,139) );
 }

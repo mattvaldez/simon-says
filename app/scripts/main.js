@@ -1,6 +1,15 @@
+//'use strict';
+
 $(function(){	
        var pattern = [];
        var player = [];              
+//----------------------------------------------------------start the game
+
+$('button').click(function(){
+        computerChoose();
+        console.log(pattern);
+   })
+
 //----------------------------------------------------------computer turn     
    function computerChoose(){
             
@@ -17,8 +26,10 @@ $(function(){
        else{
            pattern.push('blue');    
        }
+       gameFlow();
        return pattern;
-   } 
+   }
+
 //----------------------------------------------------------player button lights	
    $('div.button-green').mousedown(function(){
       $(this).addClass('green-light').mouseup(function(){
@@ -37,42 +48,65 @@ $(function(){
             $(this).removeClass('blue-light');    
       });});     
 //----------------------------------------------------------player move input
+   function playerMove(){
+   
    $('div.button-green').click(function(){
-           player.push('green');
-           console.log(player);
-           return player;
+    player.push('green')
+    console.log(player);
+    gameFlowEnd();
    });
    $('div.button-yellow').click(function(){
-           player.push('yellow');
-           return player;
+    player.push('yellow')
+    console.log(player);
+    gameFlowEnd();
    });
    $('div.button-red').click(function(){
-           player.push('red');
-           return player;
+    player.push('red')
+    console.log(player);
+    gameFlowEnd();
    });
    $('div.button-blue').click(function(){
-           player.push('blue');
-   });      return player; 
-//----------------------------------------------------------start the game
- function startGame(){
-   $('div.button-start').click(function(){
-        
-        console.log(pattern);
-   }); 
+    player.push('blue')
+    console.log(player);
+    gameFlowEnd();
+   });
 
- }
+   return player;
+    }
+ 
+    
+   
+
+//-----------------------------------------------------------real time array comparison
+  function gameFlow(){
+    console.log('the game starts here');
+    playerMove();
+
+}
+//-----------------------------------------------------------ultimate array comparison
+function gameFlowEnd(){
+  
+    var man = player.length;
+    var machine = pattern.length;
+     
+    if(man === machine){
+      
+      console.log(player +' player array for this round');
+      
+      console.log(man, machine, + ' array lengths just compared');
+      player =[];    
+  }  
+    else{
+      console.log('wrong');
+      player =[];
+      pattern = [];
+    }
+  console.log(pattern + ' this is the end of the round');
+  console.log(player + ' players array for new round');
+  computerChoose();
+} 
 
 
-//-----------------------------------------------------------compare arrays
- function playAgain(){
-  var man = _.last(player);
-  var machine = _.last(pattern);
-  if(man === machine){
-    computerChoose();
-  }
-  else{
-    alert('try again');
-  }
- } 
+
 
 });
