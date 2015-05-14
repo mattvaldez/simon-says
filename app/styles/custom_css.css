@@ -10,6 +10,23 @@
 
 	
 }
+.start{
+    margin-top: 145px;
+    margin-left: 160px;
+    width: 110px;
+    height: 110px;
+    background: radial-gradient(circle, black, rgb(4, 4, 4), rgb(58, 58, 58), black, rgb(39, 39, 39));
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+}
+h4{
+    padding-top: 38px;
+    padding-left: 18px;
+    color: white;
+}
+
 .button-green {
     margin-top: 35px;
     margin-left: 50px;
