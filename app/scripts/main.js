@@ -75,15 +75,6 @@ $('button').click(function(){
    }     
         
 //----------------------------------------------------------checks player array as it builds
-   function checkMove(){
-     for(var i = 0; i <= pattern.length; i++){
-       if(player[i] == pattern[i]){
-         return false;
-       }
-     }
-     console.log('WRONG MOVE');
-     return true;
-   }
 
    function checkMatch(){
      for(var i = 0; i <= pattern.length; i++){
