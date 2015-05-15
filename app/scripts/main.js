@@ -1,14 +1,50 @@
 'use strict';
 $(function(){	
        var pattern = [];
-       var player = [];              
+       var player = [];
+       var isPlayerTurn = false;
+
+  //----------------------------------------------------------player move input
+
+   function playerMove(color) {
+     if (isPlayerTurn) {
+        player.push(color);
+        if (player.length === pattern.length) {
+          isPlayerTurn = false;
+          if (checkMatch()) {
+            // celebrate a win
+            // keep building pattern
+            console.log('YOU WIN: NEXT ROUND');
+
+          }
+          else {
+            // start over
+            console.log('YOU LOSE: STARTING OVER');
+            pattern = [];
+          }
+          player = [];
+          computerChoose();
+        }
+     }
+     else {
+       console.log('It is not your turn.');
+     }
+   }
+
+   function setupClickHandlers(){
+     $('div.button-green').click(function() { playerMove('green');  });
+     $('div.button-red').click(function()   { playerMove('red');    });
+     $('div.button-yellow').click(function(){ playerMove('yellow'); });
+     $('div.button-blue').click(function()  { playerMove('blue');   });
+  }
+
 //----------------------------------------------------------start the game
    
 $('button').click(function(){
         console.log('the game starts here');
+        setupClickHandlers();
         computerChoose();
    });
-
 //----------------------------------------------------------computer turn     
    function computerChoose(){
             
@@ -29,51 +65,22 @@ $('button').click(function(){
            pattern.push('blue');
                
        }
-       console.log(pattern);
-       playerMove();
-           
+       console.log('The computer pattern is: ' + pattern);
+       isPlayerTurn = true;
+   }     
+        
+//----------------------------------------------------------checks player array as it builds
+   function checkMatch(){
+     for(var i = 0; i <= pattern.length; i++){
+       if(player[i] !== pattern[i]){
+         return false;
+       }
+     }
+     console.log('NICE!');
+     return true;
    }
-//----------------------------------------------------------player move input
-   function playerMove(){
-    if( color = green){
-      player.push('green');
-      console.log(player);
-    }
-    else if( color = red){
-      player.push('red');
-      console.log(player);
-    }
-    else if( color = yellow){
-      player.push('yellow');
-      console.log(player);
-    }
-    else if( color = blue){
-      player.push('blue');
-      console.log(player);
-    }
-    checkPlayer();
-
-
-   } 
-//----------------------------------------------------------player array builder
-   function checkPlayer(){
-    var i = 0;
-    var x = pattern[i].length;
-    var y = player[0].length;
-      if (x === y){
-        console.log('move matched, continue');
-        player=[];
-      }
-      else{
-        console.log('sorry, try again');
-        player = [];
-        pattern = [];
-      }
-    computerChoose();
-    console.log(pattern +' pattern');
-  }
-
-   
+       
+      
 //----------------------------------------------------------player button lights  
    $('div.button-green').mousedown(function(){
       $(this).addClass('green-light').mouseup(function(){
