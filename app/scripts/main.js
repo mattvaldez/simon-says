@@ -10,7 +10,7 @@ $(function(){
      if (isPlayerTurn) {
         player.push(color);   
         
-        else if (player.length === pattern.length){
+          if (player.length === pattern.length){
           isPlayerTurn = false;
           if (checkMatch()) {
             // celebrate a win
@@ -27,12 +27,13 @@ $(function(){
           computerChoose();
         }
      }
-   }
+   
  
      else {
        console.log('It is not your turn.');
      }
    }
+
 
 
    function setupClickHandlers(){
