@@ -8,8 +8,9 @@ $(function(){
 
    function playerMove(color) {
      if (isPlayerTurn) {
-        player.push(color);
-        if (player.length === pattern.length) {
+        player.push(color);   
+        
+        else if (player.length === pattern.length){
           isPlayerTurn = false;
           if (checkMatch()) {
             // celebrate a win
@@ -26,10 +27,13 @@ $(function(){
           computerChoose();
         }
      }
+   }
+ 
      else {
        console.log('It is not your turn.');
      }
    }
+
 
    function setupClickHandlers(){
      $('div.button-green').click(function() { playerMove('green');  });
@@ -70,6 +74,16 @@ $('button').click(function(){
    }     
         
 //----------------------------------------------------------checks player array as it builds
+   function checkMove(){
+     for(var i = 0; i <= pattern.length; i++){
+       if(player[i] == pattern[i]){
+         return false;
+       }
+     }
+     console.log('WRONG MOVE');
+     return true;
+   }
+
    function checkMatch(){
      for(var i = 0; i <= pattern.length; i++){
        if(player[i] !== pattern[i]){
