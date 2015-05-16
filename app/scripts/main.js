@@ -8,37 +8,28 @@ $(function(){
 
    function playerMove(color) {
      if (isPlayerTurn) {
-      for (var i = 0; i <= pattern.length; i++){ 
-        if((color) === pattern[i]){
-        player.push(color);   
-        
-          if (player.length === pattern.length){
+        player.push(color);
+        if (player.length === pattern.length) {
           isPlayerTurn = false;
           if (checkMatch()) {
             // celebrate a win
             // keep building pattern
             console.log('YOU WIN: NEXT ROUND');
 
-          }//checkMatch
+          }
           else {
             // start over
             console.log('YOU LOSE: STARTING OVER');
             pattern = [];
-          }//else lose
+          }
           player = [];
           computerChoose();
-        }//if player.length
-      }
-      }//for loop
-     }//isPlayerTurn
-   
- 
+        }
+     }
      else {
        console.log('It is not your turn.');
      }
-   }//playerMove
-
-
+   }
 
    function setupClickHandlers(){
      $('div.button-green').click(function() { playerMove('green');  });
@@ -79,7 +70,6 @@ $('button').click(function(){
    }     
         
 //----------------------------------------------------------checks player array as it builds
-
    function checkMatch(){
      for(var i = 0; i <= pattern.length; i++){
        if(player[i] !== pattern[i]){
