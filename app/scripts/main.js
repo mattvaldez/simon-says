@@ -1,5 +1,5 @@
 'use strict';
-$(function(){	
+$(function(){ 
        var pattern = [];
        var player = [];
        var isPlayerTurn = false;
@@ -8,6 +8,8 @@ $(function(){
 
    function playerMove(color) {
      if (isPlayerTurn) {
+      for (var i = 0; i <= pattern.length; i++){ 
+        if((color)=== pattern[i])
         player.push(color);   
         
           if (player.length === pattern.length){
@@ -17,22 +19,23 @@ $(function(){
             // keep building pattern
             console.log('YOU WIN: NEXT ROUND');
 
-          }
+          }//checkMatch
           else {
             // start over
             console.log('YOU LOSE: STARTING OVER');
             pattern = [];
-          }
+          }//else lose
           player = [];
           computerChoose();
-        }
-     }
+        }//if player.length
+      }//for loop
+     }//isPlayerTurn
    
  
      else {
        console.log('It is not your turn.');
      }
-   }
+   }//playerMove
 
 
 
