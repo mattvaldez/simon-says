@@ -9,7 +9,7 @@ $(function(){
    function playerMove(color) {
      if (isPlayerTurn) {
       for (var i = 0; i <= pattern.length; i++){ 
-        if((color)=== pattern[i])
+        if((color) === pattern[i]){
         player.push(color);   
         
           if (player.length === pattern.length){
@@ -28,6 +28,7 @@ $(function(){
           player = [];
           computerChoose();
         }//if player.length
+      }
       }//for loop
      }//isPlayerTurn
    
