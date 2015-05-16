@@ -3,6 +3,10 @@ $(function(){
        var pattern = [];
        var player = [];
        var isPlayerTurn = false;
+       var green = $('div.button-green');
+       var yellow = $('div.button-yellow');
+       var red = $('div.button-red');
+       var blue = $('div.button-blue');
 
   //----------------------------------------------------------player move input
 
@@ -23,7 +27,7 @@ $(function(){
             pattern = [];
           }
           player = [];
-          computerChoose();
+          newRound();
         }
      }
      else {
@@ -32,10 +36,10 @@ $(function(){
    }
 
    function setupClickHandlers(){
-     $('div.button-green').click(function() { playerMove('green');  });
-     $('div.button-red').click(function()   { playerMove('red');    });
-     $('div.button-yellow').click(function(){ playerMove('yellow'); });
-     $('div.button-blue').click(function()  { playerMove('blue');   });
+     $('div.button-green').click(function() { playerMove(green);  });
+     $('div.button-red').click(function()   { playerMove(red);    });
+     $('div.button-yellow').click(function(){ playerMove(yellow); });
+     $('div.button-blue').click(function()  { playerMove(blue);   });
   }
 
 //----------------------------------------------------------start the game
@@ -43,33 +47,50 @@ $(function(){
 $('button').click(function(){
         console.log('the game starts here');
         setupClickHandlers();
-        computerChoose();
+        newRound();
    });
+//----------------------------------------------------------new round
+   function newRound(){
+       var playPattern = pattern;
+       computerChoose();
+       playback(playPattern);
+   }
+//----------------------------------------------------------playback the pattern
+   function playback(playPattern){
+       var i = 0;
+       var sequence = setInterval(function(){ 
+          lightUp(playPattern[i]);
+          i ++;
+          if ( i >= playPattern.length){
+         clearInterval(sequence);
+       }
+       }, 600); 
+   }
 //----------------------------------------------------------computer turn     
    function computerChoose(){
             
        var choice = Math.random(); 
        if(choice < 0.25 ){
-           pattern.push('green');
+           pattern.push(green);
            
        }
        else if(choice < 0.5 ){
-           pattern.push('yellow');
+           pattern.push(yellow);
                  
        }
        else if(choice < 0.75 ){
-           pattern.push('red');
+           pattern.push(red);
                
        }
        else{
-           pattern.push('blue');
+           pattern.push(blue);
                
        }
        console.log('The computer pattern is: ' + pattern);
        isPlayerTurn = true;
    }     
         
-//----------------------------------------------------------checks player array as it builds
+//----------------------------------------------------------checks player array when complete
    function checkMatch(){
      for(var i = 0; i <= pattern.length; i++){
        if(player[i] !== pattern[i]){
@@ -81,8 +102,37 @@ $('button').click(function(){
    }
        
       
-//----------------------------------------------------------player button lights  
-   $('div.button-green').mousedown(function(){
+//----------------------------------------------------------computer button lights
+   function lightUp(color){
+    if( color === green){
+       $(green).addClass('green-light');
+      window.setTimeout(function(){
+        $(green).removeClass('green-light');
+      }, 300);
+    }
+    else if( color === yellow ){
+       $(yellow).addClass('yellow-light');
+      window.setTimeout(function(){
+        $(yellow).removeClass('yellow-light');
+      }, 300);
+    }
+    else if( color === red ){
+       $(red).addClass('red-light');
+      window.setTimeout(function(){
+        $(red).removeClass('red-light');
+      }, 300);
+    }
+    else if( color === blue ){
+       $(blue).addClass('blue-light');
+      window.setTimeout(function(){
+        $(blue).removeClass('blue-light');
+      }, 300);
+    }
+   }//function
+
+
+  //----------------------------------------------------------player button lights  
+   $(green).mousedown(function(){
       $(this).addClass('green-light').mouseup(function(){
           $(this).removeClass('green-light');    
       });}); 
