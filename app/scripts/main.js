@@ -22,7 +22,7 @@ $(function(){
           }
           else {
             // start over
-            alert('YOU LOSE: STARTING OVER');
+            console.log('YOU LOSE: STARTING OVER');
             pattern = [];
           }//pattern not matched
           player = [];
