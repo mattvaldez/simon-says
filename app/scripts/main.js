@@ -22,7 +22,7 @@ $(function(){
           else {
             // start over
             $('div h1.lose').html( 'Wrong move buddy, try again').addClass('animated slideInUp');
-            setTimeout(function(){$('div h1.lose').html('').removeClass('animated slideInUp')},3000)
+            
             pattern = [];
 
           }//pattern not matched
