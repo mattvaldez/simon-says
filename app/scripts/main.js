@@ -11,29 +11,26 @@ $(function(){
   //----------------------------------------------------------player move input
 
    function playerMove(color) {
+     var i = -1;
      if (isPlayerTurn) {
-        player.push(color);
-        if (player.length === pattern.length) {
+         player.push(color);
+         i ++;
+         if (player[i] !== pattern[i] || player.length === pattern.length) {
           isPlayerTurn = false;
           if (checkMatch()) {
-            // celebrate a win
-            // keep building pattern
-            console.log('YOU WIN: NEXT ROUND');
-
+            // keep building pattern 
           }
           else {
             // start over
-            console.log('YOU LOSE: STARTING OVER');
+            alert('YOU LOSE: STARTING OVER');
             pattern = [];
-          }
+          }//pattern not matched
           player = [];
           newRound();
-        }
-     }
-     else {
-       console.log('It is not your turn.');
-     }
-   }
+        }//if player is complete
+     }//isPLayerTurn
+     
+   }//function end
 
    function setupClickHandlers(){
      $('div.button-green').click(function() { playerMove(green);  });
