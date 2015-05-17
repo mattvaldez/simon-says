@@ -32,7 +32,6 @@ $(function(){
 
         }//if player is complete
      }//isPLayerTurn
-     
    }//function end
 
    function setupClickHandlers(){
@@ -49,11 +48,14 @@ $('button').click(function(){
    });
 //----------------------------------------------------------new round
    function newRound(){
+      
        var playPattern = pattern;
        $('div h2.new-round').html( 'New Round').addClass('animated bounceInDown');
        window.setTimeout(function(){ $('div h2.new-round').html( '').removeClass('animated bounceInDown');},2500);
        computerChoose();
        playback(playPattern);
+       score();
+
    }
 //----------------------------------------------------------playback the pattern
    function playback(playPattern){
@@ -91,6 +93,12 @@ $('button').click(function(){
        }
      }
      return true;
+   }
+//----------------------------------------------------------score board
+   function score(){
+    var round = _.size(pattern) - 1;
+    var display = round.toString();
+    $('[data-score = 0]').html(display);
    }
 //----------------------------------------------------------computer button lights
    function lightUp(color){

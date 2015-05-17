@@ -22,6 +22,15 @@ button{
     position: absolute;
     
 }
+.score{
+    margin-top: 417px;
+    margin-left: 130px;
+    position: absolute;
+}
+.score-board{
+    margin-top: 415px;
+    position: absolute;
+}
 h4{
     bottom: 30%;
     left: 18%;
