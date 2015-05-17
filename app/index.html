@@ -13,6 +13,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/animate.css">
     <link rel="stylesheet" href="styles/custom_css.css">
     <!-- endbuild -->
   </head>
@@ -25,12 +26,17 @@
     <div class="row">
      <div class="small-4 columns">
        <h1>Simon say what?</h1>
-         <a href="#" data-reveal-id="myModal">Hello.</a>
-           <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-              <p class="lead">Your couch.  It is mine.</p>
-              <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-              <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-           </div>
+         <a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
+
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Awesome. I have it.</h2>
+  <p class="lead">Your couch.  It is mine.</p>
+  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+<div>
+  <h1 class="lose"></h1>
+</div>
      </div>
   <!--game board-->   
      <div class="small-8 columns">

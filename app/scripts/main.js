@@ -7,7 +7,6 @@ $(function(){
        var yellow = $('div.button-yellow');
        var red = $('div.button-red');
        var blue = $('div.button-blue');
-
   //----------------------------------------------------------player move input
 
    function playerMove(color) {
@@ -22,8 +21,10 @@ $(function(){
           }
           else {
             // start over
-            console.log('YOU LOSE: STARTING OVER');
+            $('div h1.lose').html( 'Wrong move buddy, try again').addClass('animated slideInUp');
+            setTimeout(function(){$('div h1.lose').html('').removeClass('animated slideInUp')},3000)
             pattern = [];
+
           }//pattern not matched
           player = [];
           newRound();
@@ -38,9 +39,7 @@ $(function(){
      $('div.button-yellow').click(function(){ playerMove(yellow); });
      $('div.button-blue').click(function()  { playerMove(blue);   });
   }
-
 //----------------------------------------------------------start the game
-   
 $('button').click(function(){
         console.log('the game starts here');
         setupClickHandlers();
@@ -64,29 +63,22 @@ $('button').click(function(){
        }, 600); 
    }
 //----------------------------------------------------------computer turn     
-   function computerChoose(){
-            
+   function computerChoose(){      
        var choice = Math.random(); 
        if(choice < 0.25 ){
-           pattern.push(green);
-           
+           pattern.push(green);    
        }
        else if(choice < 0.5 ){
-           pattern.push(yellow);
-                 
+           pattern.push(yellow);          
        }
        else if(choice < 0.75 ){
-           pattern.push(red);
-               
+           pattern.push(red);     
        }
        else{
-           pattern.push(blue);
-               
+           pattern.push(blue);        
        }
-       console.log('The computer pattern is: ' + pattern);
        isPlayerTurn = true;
    }     
-        
 //----------------------------------------------------------checks player array when complete
    function checkMatch(){
      for(var i = 0; i <= pattern.length; i++){
@@ -94,11 +86,8 @@ $('button').click(function(){
          return false;
        }
      }
-     console.log('NICE!');
      return true;
    }
-       
-      
 //----------------------------------------------------------computer button lights
    function lightUp(color){
     if( color === green){
