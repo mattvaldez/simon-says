@@ -35,7 +35,7 @@ $(function(){
    }//function end
 
    function setupClickHandlers(){
-     $('div.button-green').click(function() { playerMove(green);  });
+     $('div.button-green').click(function() { playerMove(green); playNote(green);  });
      $('div.button-red').click(function()   { playerMove(red);    });
      $('div.button-yellow').click(function(){ playerMove(yellow); });
      $('div.button-blue').click(function()  { playerMove(blue);   });
@@ -129,7 +129,10 @@ $('button').click(function(){
    }//function
 
 
-  //----------------------------------------------------------player button lights  
+  //----------------------------------------------------------player button lights
+   function playNote(color){
+    
+   }  
    $(green).mousedown(function(){
       $(this).addClass('green-light').mouseup(function(){
           $(this).removeClass('green-light');    
