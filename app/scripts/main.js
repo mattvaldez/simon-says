@@ -15,19 +15,21 @@ $(function(){
          player.push(color);
          i ++;
          if (player[i] !== pattern[i] || player.length === pattern.length) {
-          isPlayerTurn = false;
-          if (checkMatch()) {
-            // keep building pattern 
-          }
-          else {
-            // start over
-            $('div h1.lose').html( 'Wrong move buddy, try again').addClass('animated slideInUp');
-            
-            pattern = [];
+            isPlayerTurn = false;
+            if (checkMatch()) {
+              // keep building pattern 
+            }
+            else {
+              // start over
+              $('div h1.lose').html( 'Wrong move buddy, try again').addClass('animated slideInUp');
+              pattern = [];
+              window.setTimeout(function(){ $('div h1.lose').html( '').removeClass('animated slideInUp');},2500);
+              }//pattern not matched
+              window.setTimeout(function(){
+              player = [];
+              newRound();
+              },2500);
 
-          }//pattern not matched
-          player = [];
-          newRound();
         }//if player is complete
      }//isPLayerTurn
      
@@ -48,6 +50,8 @@ $('button').click(function(){
 //----------------------------------------------------------new round
    function newRound(){
        var playPattern = pattern;
+       $('div h2.new-round').html( 'New Round').addClass('animated bounceInDown');
+       window.setTimeout(function(){ $('div h2.new-round').html( '').removeClass('animated bounceInDown');},2500);
        computerChoose();
        playback(playPattern);
    }
