@@ -8,7 +8,7 @@ continues.
 The focus of the project is to put to practice the fundamental skills we have learned thus far in the program. This includes
 HTML5, CSS3, and Javascript. Here is a complete list of technologies used in this project:
 
--HTML5
+-HTML5..
 -CSS3
 -SCSS
 -Javascript
