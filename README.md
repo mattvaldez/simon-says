@@ -20,7 +20,13 @@ HTML5, CSS3, and Javascript. Here is a complete list of technologies used in thi
 -Moqups
 -Git
 
+Here are some links related to the project:
+
+ (https://trello.com/b/HMssIpYC/simon-says)
+ (https://moqups.com/matvaldez@gmail.com/Lyypzdgp)
+
 Please enjoy this version of the game. I intend on developing the program to make the best product I can.
 Thank you.
+
 
 
