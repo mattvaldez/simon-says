@@ -1,4 +1,4 @@
-#H1 WELCOME TO SIMON SAYS!
+# WELCOME TO SIMON SAYS!
 
 This is a project for my Web Development Immersive class at General Assembly. 
 The assignment was to make a simple game. I chose to make a version of the hand-held game from my childhood, "Simon Says".
