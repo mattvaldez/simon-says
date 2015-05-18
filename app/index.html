@@ -21,7 +21,8 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
+  <!--sound-->  
+    <div data-action="sound"></div>
 
     <div class="row">
      <div class="small-4 columns">
@@ -38,14 +39,14 @@
     <!--green and yellow buttons-->
          <div class="small-block-grid 2">   
            <div class="row centered">
-             <div class="button-green" onclick="playNote"></div>
-             <div class="button-yellow"></div>     
+             <div class="button-green" onclick="playSoundA()"></div>
+             <div class="button-yellow" onclick="playSoundC()"></div>     
            </div>
     <!--red and blue buttons-->
          <div class="small-block-grid 2">
            <div class="row centered">  
-             <div class="button-red"></div>           
-             <div class="button-blue"></div>     
+             <div class="button-red" onclick="playSoundE()"></div>           
+             <div class="button-blue" onclick="playSoundF()"></div>     
                <div class="button-start"><button><h4 class="text-center"><strong>START</strong></h4></button></div> 
            </div>  
          </div>       

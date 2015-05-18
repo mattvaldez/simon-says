@@ -7,6 +7,7 @@ $(function(){
        var yellow = $('div.button-yellow');
        var red = $('div.button-red');
        var blue = $('div.button-blue');
+       
   //----------------------------------------------------------player move input
 
    function playerMove(color) {
@@ -35,10 +36,10 @@ $(function(){
    }//function end
 
    function setupClickHandlers(){
-     $('div.button-green').click(function() { playerMove(green); playNote(green);  });
-     $('div.button-red').click(function()   { playerMove(red);    });
-     $('div.button-yellow').click(function(){ playerMove(yellow); });
-     $('div.button-blue').click(function()  { playerMove(blue);   });
+     $('div.button-green').click(function() { playerMove(green);   });
+     $('div.button-red').click(function()   { playerMove(red);     });
+     $('div.button-yellow').click(function(){ playerMove(yellow);  });
+     $('div.button-blue').click(function()  { playerMove(blue);    });
   }
 //----------------------------------------------------------start the game
 $('button').click(function(){
@@ -104,24 +105,28 @@ $('button').click(function(){
    function lightUp(color){
     if( color === green){
        $(green).addClass('green-light');
+       playSoundA();
       window.setTimeout(function(){
         $(green).removeClass('green-light');
       }, 300);
     }
     else if( color === yellow ){
        $(yellow).addClass('yellow-light');
+       playSoundC();
       window.setTimeout(function(){
         $(yellow).removeClass('yellow-light');
       }, 300);
     }
     else if( color === red ){
        $(red).addClass('red-light');
+       playSoundE();
       window.setTimeout(function(){
         $(red).removeClass('red-light');
       }, 300);
     }
     else if( color === blue ){
        $(blue).addClass('blue-light');
+       playSoundF();
       window.setTimeout(function(){
         $(blue).removeClass('blue-light');
       }, 300);
@@ -129,10 +134,23 @@ $('button').click(function(){
    }//function
 
 
-  //----------------------------------------------------------player button lights
-   function playNote(color){
+  //----------------------------------------------------------player button sounds
+      $(green).on('click', function(){
+        playSoundA();});
+      
+      $(yellow).on('click', function(){
+        playSoundC();});
+      
+      $(red).on('click', function(){
+        playSoundE();});
+      
+      $(blue).on('click', function(){
+        playSoundF();});
+
+  
+   
+  //----------------------------------------------------------player button lights  
     
-   }  
    $(green).mousedown(function(){
       $(this).addClass('green-light').mouseup(function(){
           $(this).removeClass('green-light');    
@@ -149,5 +167,25 @@ $('button').click(function(){
       $(this).addClass('blue-light').mouseup(function(){
             $(this).removeClass('blue-light');    
       });});     
-
+  //----------------------------------------------------------sound function
+  function playSoundA(){
+    var audio = $('<audio autoplay></audio>');
+    audio.append('<source src="sounds/68437__pinkyfinger__piano-a.wav" type="audio/wav" />');
+    $('[data-action=sound]').html(audio);
+  }
+  function playSoundC(){
+    var audio = $('<audio autoplay></audio>');
+    audio.append('<source src="sounds/68440__pinkyfinger__piano-c.wav" type="audio/wav" />');
+    $('[data-action=sound]').html(audio);
+  }
+  function playSoundE(){
+    var audio = $('<audio autoplay></audio>');
+    audio.append('<source src="sounds/68443__pinkyfinger__piano-e.wav" type="audio/wav" />');
+    $('[data-action=sound]').html(audio);
+  }
+  function playSoundF(){
+    var audio = $('<audio autoplay></audio>');
+    audio.append('<source src="sounds/68445__pinkyfinger__piano-f.wav" type="audio/wav" />');
+    $('[data-action=sound]').html(audio);
+  }
 });
