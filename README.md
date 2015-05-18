@@ -8,23 +8,23 @@ continues.
 The focus of the project is to put to practice the fundamental skills we have learned thus far in the program. This includes
 HTML5, CSS3, and Javascript. Here is a complete list of technologies used in this project:
 
--HTML5..
--CSS3
--SCSS
--Javascript
--Yeoman
--Grunt
--Foundation Framework
--jQuery 
--Underscore
--Moqups
--Git
+-HTML5  
+-CSS3  
+-SCSS  
+-Javascript  
+-Yeoman  
+-Grunt  
+-Foundation Framework  
+-jQuery   
+-Underscore  
+-Moqups  
+-Git  
 
 Here are some links related to the project:
 
- -(https://trello.com/b/HMssIpYC/simon-says)
- -(https://moqups.com/?gclid=CjwKEAjwm-aqBRD39YPqhbzthzYSJACFj-AtfQFpVVxwwgo1baKOR360JUe5fjo_FQsTR3T_NeXRPBoCJAHw_wcB#!/edit/matvaldez@gmail.com/Lyypzdgp)
- -(https://www.bitballoon.com/sites/simonsaywhat)
+ -(https://trello.com/b/HMssIpYC/simon-says)  
+ -(https://moqups.com/?gclid=CjwKEAjwm-aqBRD39YPqhbzthzYSJACFj-AtfQFpVVxwwgo1baKOR360JUe5fjo_FQsTR3T_NeXRPBoCJAHw_wcB#!/edit/matvaldez@gmail.com/Lyypzdgp)  
+ -(https://www.bitballoon.com/sites/simonsaywhat)  
 
 Please enjoy this version of the game. I intend on developing the program to make the best product I can.
 Thank you.
