@@ -209,6 +209,7 @@ module.exports = function (grunt) {
           src: [
             '<%= config.dist %>/scripts/{,*/}*.js',
             '<%= config.dist %>/styles/{,*/}*.css',
+            '<%= config.dist %>/sounds/{,*/}*.wav',
             '<%= config.dist %>/images/{,*/}*.*',
             '<%= config.dist %>/styles/fonts/{,*/}*.*',
             '<%= config.dist %>/*.{ico,png}'
@@ -269,7 +270,7 @@ module.exports = function (grunt) {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,
           conservativeCollapse: true,
-          removeAttributeQuotes: true,
+          removeAttributeQuotes: false,
           removeCommentsFromCDATA: true,
           removeEmptyAttributes: true,
           removeOptionalTags: true,
@@ -320,15 +321,18 @@ module.exports = function (grunt) {
           cwd: '<%= config.app %>',
           dest: '<%= config.dist %>',
           src: [
-            '*.{ico,png,txt}',
+            '*.{ico,png,txt,wav}',
             'images/{,*/}*.webp',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            'sounds/{,*/}*.*',
+            'webicons-master/{,*/}*.*'
+            
           ]
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
           dest: '<%= config.dist %>/.htaccess'
-        }]
+        } ]
       },
       styles: {
         expand: true,
@@ -337,20 +341,24 @@ module.exports = function (grunt) {
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
       }
+      
     },
 
     // Run some tasks in parallel to speed up build process
     concurrent: {
       server: [
         'sass:server',
-        'copy:styles'
+        'copy:styles',
+  
       ],
       test: [
-        'copy:styles'
+        'copy:styles',
+        
       ],
       dist: [
         'sass',
         'copy:styles',
+       
         'imagemin',
         'svgmin'
       ]
