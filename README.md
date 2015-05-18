@@ -1,4 +1,4 @@
-#H1 WELCOME TO SIMON SAYS!
+# WELCOME TO SIMON SAYS!
 
 This is a project for my Web Development Immersive class at General Assembly. 
 The assignment was to make a simple game. I chose to make a version of the hand-held game from my childhood, "Simon Says".
@@ -24,9 +24,9 @@ Here are some links related to the project:
 
  -(https://trello.com/b/HMssIpYC/simon-says)  
  -(https://moqups.com/?gclid=CjwKEAjwm-aqBRD39YPqhbzthzYSJACFj-AtfQFpVVxwwgo1baKOR360JUe5fjo_FQsTR3T_NeXRPBoCJAHw_wcB#!/edit/matvaldez@gmail.com/Lyypzdgp)  
- -(https://www.bitballoon.com/sites/simonsaywhat)  
+ -(http://simonsaywhat.bitballoon.com/)  
 
-Please enjoy this version of the game. I intend on developing the program to make the best product I can.
+Please enjoy this version of the game. I intend to continue developing the program to make the best product I can.
 Thank you.
 
 
