@@ -58,7 +58,7 @@ $('button').click(function(){
        score();
 
    }
-//----------------------------------------------------------playback the pattern
+//----------------------------------------------------------computer will playback the pattern
    function playback(playPattern){
        var i = 0;
        var sequence = setInterval(function(){ 
@@ -101,7 +101,7 @@ $('button').click(function(){
     var display = round.toString();
     $('[data-score = 0]').html(display);
    }
-//----------------------------------------------------------computer button lights
+//----------------------------------------------------------computer button lights and sound
    function lightUp(color){
     if( color === green){
        $(green).addClass('green-light');
@@ -170,22 +170,22 @@ $('button').click(function(){
   //----------------------------------------------------------sound function
   function playSoundA(){
     var audio = $('<audio autoplay></audio>');
-    audio.append('<source src="styles/sounds/68437__pinkyfinger__piano-a.wav" type="audio/wav" />');
+    audio.append('<source src="sounds/68437__pinkyfinger__piano-a.wav" type="audio/wav" />');
     $('[data-action=sound]').html(audio);
   }
   function playSoundC(){
     var audio = $('<audio autoplay></audio>');
-    audio.append('<source src="styles/sounds/68440__pinkyfinger__piano-c.wav" type="audio/wav" />');
+    audio.append('<source src="sounds/68440__pinkyfinger__piano-c.wav" type="audio/wav" />');
     $('[data-action=sound]').html(audio);
   }
   function playSoundE(){
     var audio = $('<audio autoplay></audio>');
-    audio.append('<source src="styles/sounds/68443__pinkyfinger__piano-e.wav" type="audio/wav" />');
+    audio.append('<source src="sounds/68443__pinkyfinger__piano-e.wav" type="audio/wav" />');
     $('[data-action=sound]').html(audio);
   }
   function playSoundF(){
     var audio = $('<audio autoplay></audio>');
-    audio.append('<source src="styles/sounds/68445__pinkyfinger__piano-f.wav" type="audio/wav" />');
+    audio.append('<source src="sounds/68445__pinkyfinger__piano-f.wav" type="audio/wav" />');
     $('[data-action=sound]').html(audio);
   }
 });
