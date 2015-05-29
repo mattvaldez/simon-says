@@ -100,7 +100,7 @@ $('button').click(function(){
    function score(){
     var round = pattern.length -1;
     var display = round.toString();
-    $('[data-score = 0]').html(display);
+    $('.score').html(display);
    }
 //----------------------------------------------------------computer button lights and sound
    function lightUp(color){
