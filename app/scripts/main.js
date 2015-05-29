@@ -97,7 +97,7 @@ $('button').click(function(){
    }
 //----------------------------------------------------------score board
    function score(){
-    var round = pattern.length -1;
+    var round = _.size(pattern -1);
     var display = round.toString();
     $('.score').html(display);
    }
