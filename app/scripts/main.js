@@ -169,23 +169,23 @@ $('button').click(function(){
   //----------------------------------------------------------sound function
 function playSoundA(){
     var audio = $('<audio autoplay></audio>');
-    audio.append('<source src="media/68437__pinkyfinger__piano-a.wav" type="audio/wav" />');
-    $('[data-action=sound]').html(audio);
+    audio.append('<source src="media/68437__pinkyfinger__piano-a.mp3" type="audio/mp3" />');
+    audio.append('<source src="media/68437__pinkyfinger__piano-a.ogg" type="audio/ogg" />');
   }
   function playSoundC(){
     var audio = $('<audio autoplay></audio>');
-    audio.append('<source src="media/68440__pinkyfinger__piano-c.wav" type="audio/wav" />');
-    $('[data-action=sound]').html(audio);
+    audio.append('<source src="media/68440__pinkyfinger__piano-c.mp3" type="audio/mp3" />');
+    audio.append('<source src="media/68440__pinkyfinger__piano-c.ogg" type="audio/ogg" />');
   }
   function playSoundE(){
     var audio = $('<audio autoplay></audio>');
-    audio.append('<source src="media/68443__pinkyfinger__piano-e.wav" type="audio/wav" />');
-    $('[data-action=sound]').html(audio);
+    audio.append('<source src="media/68443__pinkyfinger__piano-e.mp3" type="audio/mp3" />');
+    audio.append('<source src="media/68443__pinkyfinger__piano-e.ogg" type="audio/ogg" />');
   }
   function playSoundF(){
     var audio = $('<audio autoplay></audio>');
-    audio.append('<source src="media/68445__pinkyfinger__piano-f.wav" type="audio/wav" />');
-    $('[data-action=sound]').html(audio);
+    audio.append('<source src="media/68445__pinkyfinger__piano-f.mp3" type="audio/mp3" />');
+    audio.append('<source src="media/68445__pinkyfinger__piano-f.ogg" type="audio/ogg" />');
   }
 
 });

@@ -31,7 +31,7 @@ button{
 .score{
   font-family: 'Special Elite', cursive;
   font-size: 2em;
-  bottom: 25%;
+  bottom: 20%;
   position: fixed;
 
    
@@ -39,7 +39,7 @@ button{
 .score-board{  
   font-family: 'Special Elite', cursive;
   font-size: 2em;
-  bottom: 30%;
+  bottom: 25%;
   position: fixed;
 
     
