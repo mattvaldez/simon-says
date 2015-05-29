@@ -8,7 +8,7 @@ $(function(){
        var red = $('div.button-red');
        var blue = $('div.button-blue');
        
-  //----------------------------------------------------------player move input
+//----------------------------------------------------------player move input
   
 
    function playerMove(color) {
