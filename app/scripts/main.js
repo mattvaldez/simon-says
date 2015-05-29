@@ -12,14 +12,12 @@ $(function(){
   
 
    function playerMove(color) {
-     var i = -1;
      if (isPlayerTurn) {
          player.push(color);
-         i ++;
-         if (player[i] !== pattern[i] || player.length === pattern.length) {
+          if (player.length === pattern.length) {
             isPlayerTurn = false;
             if (checkMatch()) {
-              // keep building pattern 
+              //keep building player array
             }
             else {
               // start over
@@ -28,7 +26,7 @@ $(function(){
               window.setTimeout(function(){ $('div h1.lose').html( '').removeClass('animated slideInUp');},2500);
               }//pattern not matched
               window.setTimeout(function(){
-              player = [];
+              player = []; 
               newRound();
               },2500);
 
@@ -97,7 +95,7 @@ $('button').click(function(){
    }
 //----------------------------------------------------------score board
    function score(){
-    var round = _.size(pattern -1);
+    var round = _.size(pattern)-1;
     var display = round.toString();
     $('.score').html(display);
    }
