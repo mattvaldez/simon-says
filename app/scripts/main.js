@@ -23,7 +23,7 @@ $(function(){
             }
             else {
               // start over
-              $('div h1.lose').html( 'Wrong move buddy, try again').addClass('animated slideInUp');
+              $('div h1.lose').html( 'wrong move buddy, try again.').addClass('animated slideInUp');
               pattern = [];
               window.setTimeout(function(){ $('div h1.lose').html( '').removeClass('animated slideInUp');},2500);
               }//pattern not matched
@@ -44,7 +44,6 @@ $(function(){
   }
 //----------------------------------------------------------start the game
 $('button').click(function(){
-        console.log('the game starts here');
         setupClickHandlers();
         newRound();
    });
@@ -52,7 +51,7 @@ $('button').click(function(){
    function newRound(){
       
        var playPattern = pattern;
-       $('div h2.new-round').html( 'New Round').addClass('animated bounceInDown');
+       $('div h2.new-round').html( 'new round, follow me.').addClass('animated bounceInDown');
        window.setTimeout(function(){ $('div h2.new-round').html( '').removeClass('animated bounceInDown');},2500);
        computerChoose();
        playback(playPattern);
@@ -148,8 +147,7 @@ $('button').click(function(){
       $(blue).on('click', function(){
         playSoundF();});
 
-  
-   
+
   //----------------------------------------------------------player button lights  
     
    $(green).mousedown(function(){

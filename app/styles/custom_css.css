@@ -10,7 +10,7 @@ body{
 	border-radius: 360px;
     position: fixed;
     box-shadow: 10px 10px 5px #888888;
-    left: 33%;
+    left: 35%;
     top: 50px;
 
  
@@ -29,17 +29,28 @@ button{
     
 }
 .score{
-  bottom: 27%;
+  font-family: 'Special Elite', cursive;
+  font-size: 2em;
+  bottom: 25%;
   position: fixed;
-
 
    
 }
 .score-board{  
+  font-family: 'Special Elite', cursive;
+  font-size: 2em;
   bottom: 30%;
   position: fixed;
 
     
+}
+
+.lose{
+    font-family: 'Special Elite', cursive;
+}
+
+.new-round {
+    font-family: 'Special Elite', cursive;
 }
 
 h4{
