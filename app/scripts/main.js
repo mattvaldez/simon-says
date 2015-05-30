@@ -8,38 +8,6 @@ $(function(){
        var red = $('div.button-red');
        var blue = $('div.button-blue');
        
-//----------------------------------------------------------player move input
-  
-
-   function playerMove(color) {
-     if (isPlayerTurn) {
-         player.push(color);
-          if (player.length === pattern.length) {
-            isPlayerTurn = false;
-            if (checkMatch()) {
-              //keep building player array
-            }
-            else {
-              // start over
-              $('div h1.lose').html( 'wrong move buddy, try again.').addClass('animated slideInUp');
-              pattern = [];
-              window.setTimeout(function(){ $('div h1.lose').html( '').removeClass('animated slideInUp');},2500);
-              }//pattern not matched
-              window.setTimeout(function(){
-              player = []; 
-              newRound();
-              },2500);
-
-        }//if player is complete
-     }//isPLayerTurn
-   }//function end
-
-   function setupClickHandlers(){
-     $('div.button-green').click(function() { playerMove(green);   });
-     $('div.button-red').click(function()   { playerMove(red);     });
-     $('div.button-yellow').click(function(){ playerMove(yellow);  });
-     $('div.button-blue').click(function()  { playerMove(blue);    });
-  }
 //----------------------------------------------------------start the game
 $('button').click(function(){
         setupClickHandlers();
@@ -55,17 +23,6 @@ $('button').click(function(){
        playback(playPattern);
        score();
 
-   }
-//----------------------------------------------------------computer will playback the pattern
-   function playback(playPattern){
-       var i = 0;
-       var sequence = setInterval(function(){ 
-          lightUp(playPattern[i]);
-          i ++;
-          if ( i >= playPattern.length){
-         clearInterval(sequence);
-       }
-       }, 600); 
    }
 //----------------------------------------------------------computer turn     
    function computerChoose(){      
@@ -84,6 +41,47 @@ $('button').click(function(){
        }
        isPlayerTurn = true;
    }     
+//----------------------------------------------------------computer will playback the pattern
+   function playback(playPattern){
+       var i = 0;
+       var sequence = setInterval(function(){ 
+          lightUp(playPattern[i]);
+          i ++;
+          if ( i >= playPattern.length){
+         clearInterval(sequence);
+       }
+       }, 600); 
+   }
+//----------------------------------------------------------player move input
+  
+   function playerMove(color) {
+     if (isPlayerTurn) {
+         player.push(color);
+          if (player.length === pattern.length || color !== pattern[_.size(player)-1]) {
+            isPlayerTurn = false;
+            if (checkMatch()) {
+              //keep building player array
+            }
+            else {
+              // start over
+              $('div h1.lose').html( 'wrong move buddy, try again.').addClass('animated slideInUp');
+              pattern = [];
+              window.setTimeout(function(){ $('div h1.lose').html( '').removeClass('animated slideInUp');},2500);
+              }//pattern not matched
+              window.setTimeout(function(){
+              player = []; 
+              newRound();
+              },2500);
+        }//if player is complete
+     }//isPLayerTurn
+   }//function end
+
+   function setupClickHandlers(){
+     $('div.button-green').click(function() { playerMove(green);   });
+     $('div.button-red').click(function()   { playerMove(red);     });
+     $('div.button-yellow').click(function(){ playerMove(yellow);  });
+     $('div.button-blue').click(function()  { playerMove(blue);    });
+  }
 //----------------------------------------------------------checks player array when complete
    function checkMatch(){
      for(var i = 0; i <= pattern.length; i++){
