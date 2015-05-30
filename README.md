@@ -12,10 +12,10 @@ HTML5, CSS3, and Javascript. Here is a complete list of technologies used in thi
 -CSS3  
 -SCSS  
 -Javascript  
--Yeoman Scaffolding  
--Grunt task runner
--Bower Package Manager
--Foundation Framework  
+-Yeoman Scaffolding    
+-Grunt task runner  
+-Bower Package Manager  
+-Foundation Framework    
 -jQuery   
 -Underscore  
 -Moqups  
