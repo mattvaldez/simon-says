@@ -144,7 +144,7 @@ $('button').click(function(){
         playSoundF();});
 
 
-  //----------------------------------------------------------player button lights  
+  //----------------------------------------------------------player button lights   
     
    $(green).mousedown(function(){
       $(this).addClass('green-light').mouseup(function(){

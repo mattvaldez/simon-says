@@ -45,6 +45,13 @@ button{
     
 }
 
+.modal{
+    font-family: 'Special Elite', cursive;
+    position: fixed;
+    bottom: 5%;
+    font-size: 1.5em;
+}
+
 .lose{
     font-family: 'Special Elite', cursive;
 }
@@ -103,7 +110,7 @@ h4{
 
 
   
-a {
+.signature {
     display: inline-block;
     width: 2rem;
     height: 2rem;

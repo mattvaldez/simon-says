@@ -65,10 +65,22 @@
       </div>
     </div>    
   <!--score board--> 
-          
-     <footer>
-       <a href="https://github.com/mattvaldez/simon-says/blob/master/README.md">by mattValdez</a>
-     </footer>
+    
+    <footer>
+    <div class="row">
+      <div class="small-3 small-centered columns">
+        <a href="#" data-reveal-id="myModal" class= "modal text-center">what is this?</a>
+          <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+          <h2 id="modalTitle">Simon Say What?</h2>
+          <p class="lead">A simple game to challenge your memory, let Simon create a melody for you to repeat.</p>
+          <p>The game will begin with Simon playing one single note. Successfully repeat the note and Simon will continue to build the melody one note at a time. The pattern continues until you can no longer play all of the correct notes.</p>
+          <p>Press the START button to begin. Enjoy!</p>
+          <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+          </div>
+      </div>
+    </div>      
+      <a href="https://github.com/mattvaldez/simon-says/blob/master/README.md" class="signature">by mattValdez</a>
+    </footer>
    
    
      
@@ -84,6 +96,7 @@
     <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
     <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
     <script src="bower_components/foundation/js/foundation.js"></script>
+    <script src="js/foundation/foundation.reveal.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -101,5 +114,8 @@
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
+        <script>
+        $(document).foundation();
+        </script>
 </body>
 </html>
