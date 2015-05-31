@@ -7,7 +7,7 @@ $(function(){
        var yellow = $('div.button-yellow');
        var red = $('div.button-red');
        var blue = $('div.button-blue');
-       
+       var high = localStorage.getItem('high');
 //----------------------------------------------------------start the game
 $('button').click(function(){
         setupClickHandlers();
@@ -22,7 +22,6 @@ $('button').click(function(){
        computerChoose();
        playback(playPattern);
        score();
-
    }
 //----------------------------------------------------------computer turn     
    function computerChoose(){      
@@ -69,9 +68,10 @@ $('button').click(function(){
               window.setTimeout(function(){ $('div h1.lose').html( '').removeClass('animated slideInUp');},2500);
               }//pattern not matched
               window.setTimeout(function(){
+              highScore();
               player = []; 
-              newRound();
-              },2500);
+              newRound();              
+              },2000);
         }//if player is complete
      }//isPLayerTurn
    }//function end
@@ -97,7 +97,19 @@ $('button').click(function(){
     var display = round.toString();
     $('.score').html(display);
    }
+
+ //----------------------------------------------------------high score
+   function highScore(){
+       if(_.size > high){
+         localStorage.setItem('high', _.size(player));
+      }
+      else{
+         localStorage.setItem('high', _.size(player)); 
+      }
+    $('.high').html(high);
+  } 
 //----------------------------------------------------------computer button lights and sound
+
    function lightUp(color){
     if( color === green){
        $(green).addClass('green-light');

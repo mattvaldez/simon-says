@@ -42,7 +42,20 @@ button{
   bottom: 25%;
   position: fixed;
 
-    
+}
+
+.high{
+  font-family: 'Special Elite', cursive;
+  font-size: 2em;
+  bottom: 10%;
+  position: fixed; 
+}
+
+.high-board{
+  font-family: 'Special Elite', cursive;
+  font-size: 2em;
+  bottom: 15%;
+  position: fixed; 
 }
 
 .modal{
